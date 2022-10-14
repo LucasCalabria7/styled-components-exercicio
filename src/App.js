@@ -2,6 +2,12 @@ import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
 
+import {HeaderBase} from "./Componentes/HeaderStyle"
+import {HeaderSearch} from "./Componentes/HeaderStyle"
+import {NavBase} from "./Componentes/NavStyle"
+import {VideoPlace} from "./Componentes/VideoPlaceStyle"
+
+
 export default function App() {
   const card1 = {
     titulo: "Título do vídeo",
@@ -12,13 +18,13 @@ export default function App() {
   return (
     <div>
       <div className="tela-inteira">
-        <header>
+        <HeaderBase>
           <h1>LabeTube</h1>
-          <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+          <HeaderSearch type="text" placeholder="Busca" id="campoDeBusca" />
+        </HeaderBase>
 
         <main>
-          <nav className="menu-vertical">
+          <NavBase>
             <ul>
               <li className="botoes-meunu-vertical">Início</li>
               <li className="botoes-meunu-vertical">Em alta</li>
@@ -27,15 +33,15 @@ export default function App() {
               <li className="botoes-meunu-vertical">Originais</li>
               <li className="botoes-meunu-vertical">Histórico</li>
             </ul>
-          </nav>
+          </NavBase>
 
-          <section className="painel-de-videos">
+          <VideoPlace>
             <CardVideo
               image1={card1.imagemDoVideo}
               titulo={card1.titulo}
               textoAlternativo={card1.textoAlternativo}
             />
-          </section>
+          </VideoPlace>
         </main>
 
         <footer>
